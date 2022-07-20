@@ -7,7 +7,7 @@
     padding-left: 15px;
 }
 .card {
-    background-color:bisque;
+    background-color: #FFFFCC;
     margin-bottom: 10px;
     border-radius: 10px;
     padding: 1rem;
@@ -17,14 +17,33 @@
     justify-content: space-between;
     
 }
+.card.nueva {
+    background-color:burlywood;
+}
+textarea {
+    border: none;
+    resize: none;
+    background-color:burlywood;
 
-
-.nota.nueva {
-    background-color: aqua;
 }
 
+textarea:focus{
+    outline: none;
+    
+}
+
+.guardar {
+    margin-left: 40px;
+    background-color:gray;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 10px 5px 10px;
+}
+.guardar:hover{
+    background-color: greenyellow;
+    cursor: pointer;
+}
 .btn-close {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
+    margin-left: 190px;
+    padding-left: 60px;
 }

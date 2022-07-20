@@ -1,15 +1,36 @@
+import { useState } from "react";
 
 
-const AgregarNota = () => {
+const AgregarNota = ({guardarNotaClick}) => {
+    const [notaTexto, setNotaTexto] = useState('');
+    const manejarCambio = (event) => {
+        setNotaTexto(event.target.value);
+    };
+    
+    const agregarNotaClick = () => {
+        if (notaTexto.trim().length > 0){
+            guardarNotaClick(notaTexto);
+            setNotaTexto('')
+        }
+    };
+
     return(<div className="card nueva">
         <textarea 
         rows="8" 
         cols="10" 
-        placeholder="Agrega una nota nueva"
+        placeholder="Agregar titulo de la nota"
+        value={notaTexto}
+        onChange={manejarCambio}
+        ></textarea>
+        <textarea 
+        rows="8" 
+        cols="10" 
+        placeholder="Agregar titulo de la nota"
+        value={notaTexto}
+        onChange={manejarCambio}
         ></textarea>
         <div className="card-body">
-            <small>200 caracteres</small>
-            <button className="guardar">Guardar</button>
+            <button className="guardar" onClick={agregarNotaClick}>Guardar</button>
         </div>
     </div>
     );
